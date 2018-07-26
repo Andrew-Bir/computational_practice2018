@@ -1,0 +1,25 @@
+{% extends "mainApp/wrapper.html" %}
+  {% block content %}
+    <h3>Detect and Crop results</h3>
+    <div class="row">
+    <div class="col-sm-6">
+      {% regroup object_list by parent_obj as continents_list %}
+        {% for continent in continents_list %}
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <td class="col-sm-2" colspan="{{ continent.list|length }}">{{ continent.grouper }}</td>
+            </tr>
+            <tr>
+            {% for item in continent.list %}
+              <td class="col-sm-2">
+                <img style="width:82px;" class="img-thumbnail img-responsive center-block" src ="{{ item.file.url }}" />
+              </td>
+            {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endblock %}

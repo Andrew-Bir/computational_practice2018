@@ -1,0 +1,9 @@
+{% extends "mainApp/wrapper.html" %}
+{% block content %}
+    <h3>Upload file</h3>
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success btn-md mb-2">Submit</button>
+    </form>
+{% endblock %}

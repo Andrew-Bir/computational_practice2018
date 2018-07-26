@@ -1,0 +1,31 @@
+{% extends "mainApp/wrapper.html" %}
+  {% block content %}
+    <h3>Uploaded files</h3>
+    <div class="row">
+    <div class="col-sm-6">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>Title</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for subject in object_list %}
+          <tr>
+            <td class="col-sm-2">
+              <img style="width:10em;" class="img-thumbnail img-responsive center-block" src ="{{subject.file.url}}" />
+            </td>
+            <td class="col-sm-2">{{subject.title}}</td>
+            <td class="col-sm-2">
+              <a href="{{subject.id}}"><button class="btn btn-info btn-sm">details</button></a>
+              <a href="detect/{{subject.id}}"><button class="btn btn-success btn-sm">detect</button></a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endblock %}
