@@ -1,0 +1,29 @@
+{% extends "mainApp/wrapper.html" %}
+  {% block content %}
+    <h3>Unknown faces</h3>
+    <a href = "/uploadTest" class="nav-link">add test face</a>
+    <div class="row">
+    <div class="col-sm-6">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for subject in object_list %}
+          <tr>
+            <td class="col-sm-2">
+              <img style="width:10em;" class="img-thumbnail img-responsive center-block" src ="{{subject.file.url}}" />
+            </td>
+            <td class="col-sm-2">
+              <a href="identify/{{subject.id}}"><button class="btn btn-success btn-sm">Identify</button></a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endblock %}

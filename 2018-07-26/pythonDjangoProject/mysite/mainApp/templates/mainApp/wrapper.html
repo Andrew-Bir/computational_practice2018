@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset = "UTF-8">
+<title>facial recognition</title>
+{% load staticfiles %}
+<link rel = "stylesheet" href = "{% static 'mainApp/css/bootstrap.min.css' %}"  type = "text/css">
+<body style="background-color:#f3f3f3;">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">Facial recognition</a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"><a href = "/admin" class="nav-link">Admin</a></li>
+    <li class="nav-item"><a href = "/uploadfileapp/uploadFile" class="nav-link">Upload file</a></li>
+    <li class="nav-item"><a href = "/uploadfileapp" class="nav-link">Uploaded</a></li>
+    <li class="nav-item"><a href = "/uploadfileapp/results" class="nav-link">Results</a></li>
+  </ul>
+</nav>
+<main style="margin-top:100px;">
+      <div class="container marketing">
+      {% block content %}
+
+      {% endblock %}
+      </div>
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>© 2018 Pashkevich Andrew</p>
+      </footer>
+    </main>
+</body>

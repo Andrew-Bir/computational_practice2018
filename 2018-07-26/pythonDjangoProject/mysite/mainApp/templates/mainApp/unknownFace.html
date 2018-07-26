@@ -1,0 +1,17 @@
+{% extends "mainApp/wrapper.html" %}
+{% block content %}
+<h1>Facial recognition</h1>
+<p>
+  <img style="width:25em;" class="img-thumbnail img-responsive center-block" src ="{{ f }}" />
+</p>
+<div>
+  <form method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="path" value="/media/results/" />
+    <button type="submit" class="btn btn-success btn-md mb-4" value="identify">Go...</button>
+  </form>
+</div>
+<div>
+  <h3>{{ res }}</h3>
+</div>
+{% endblock %}
