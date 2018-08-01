@@ -1,0 +1,21 @@
+{% extends "mainApp/wrapper.html" %}
+{% block content %}
+<h2>Facial recognition</h2>
+<p>
+  {% if de == None %}
+  <img style="height:20em;" class="img-thumbnail img-responsive center-block" src ="{{ f }}" />
+  {% else %}
+  <img style="height:20em;" class="img-thumbnail img-responsive center-block" src ="/media/{{ de }}" />
+  {% endif %}
+</p>
+<div>
+  <form method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="path" value="/media/results/" />
+    <button type="submit" class="btn btn-success btn-md mb-4" value="identify">Go...</button>
+  </form>
+</div>
+<h4 style="color: #800000;">
+  {{ res }}
+</h4>
+{% endblock %}
