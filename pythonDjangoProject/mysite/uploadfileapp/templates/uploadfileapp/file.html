@@ -1,0 +1,7 @@
+{% extends "mainApp/wrapper.html" %}
+  {% block content %}
+  <h1>{{ uploadmodel.title }}</h1>
+  <p>
+    <img style="width:50em;" class="img-thumbnail img-responsive center-block" src ="{{ uploadmodel.file.url }}" />
+  </p>
+{% endblock %}
